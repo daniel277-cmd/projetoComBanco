@@ -8,17 +8,11 @@
         $email = $_POST['email'];
         $senha = $_POST['senha'];
 
-        // print_r('Email: ' . $email);
-        // print_r('<br>');
-        // print_r('Senha: ' . $senha);
-
         $sql = "SELECT * FROM alunos WHERE email = '$email' and senha = '$senha'";
 
           
         $result = $conn->query($sql);
 
-        //print_r($sql);
-        //print_r($result);
 
         if (mysqli_num_rows($result)  < 1)
         {
@@ -33,7 +27,7 @@
     }
     else
     {
-        //n acessa
+        //nao acessa
         header('location :login.php');
     }
 
